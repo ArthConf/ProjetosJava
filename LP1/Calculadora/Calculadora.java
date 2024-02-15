@@ -1,4 +1,4 @@
-package LP1.ExercicicioCap3.Calculadora;
+package LP1.Calculadora;
 import java.util.Scanner;
 
 public class Calculadora {
