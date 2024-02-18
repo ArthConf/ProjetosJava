@@ -1,4 +1,4 @@
-package LP1;
+package LP1.ExercicicioCap3;
 
 public class AulaOperadores {
     public static void main(String[] args){

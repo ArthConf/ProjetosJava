@@ -1,4 +1,4 @@
-package LP1;
+package LP1.ExercicicioCap3;
 import java.util.Scanner;
 
 public class Par {
