@@ -9,6 +9,7 @@ public class TesteConta {
         conta.cliente = "Arthur";
         conta.numeroConta = 922992;
         System.out.println(conta.recuperaDadosParaImpressao());
+        //Como não atribui valor para Data de abertura da conta, o terminal imprimiu com 0 em cada variável.
         System.out.println("-------------------------------------------------------");
         System.out.println("Banco Confessor\n");
         
