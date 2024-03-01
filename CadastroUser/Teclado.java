@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Teclado {
 
 	public static int lerInteiro(String rotulo) {
-		System.out.println(rotulo);
+		System.out.print(rotulo);
 		Scanner scann = new Scanner (System.in);
 		return scann.nextInt();
 	}

@@ -4,6 +4,7 @@ public class Cadastro {
 	
     public static void main(String[] args) {
         String consult;
+		
         Pessoa[] user = new Pessoa[10];
         System.out.println("Bem vindo ao Sistema de Cadastro\n\n");
         for(int i = 0; i<10 ; i++) {
@@ -23,7 +24,7 @@ public class Cadastro {
         				case 1:
         					consult = Teclado.lerString("Digite o nome do usuário: ");
         					for(int j = 0; j < 10 ; j++) {
-        						if(user[j] !=null && consult.equals(user[j].nome)) {
+        						if(user[j] !=null && consult.equalsIgnoreCase(user[j].nome)) {
                                     System.out.print("\033[H\033[2J");
                                     System.out.flush();
         							user[j].nome = Teclado.lerString("Digite o novo nome: ");
@@ -38,11 +39,10 @@ public class Cadastro {
         				case 2:
        	        		 	consult = Teclado.lerString("Digite o CPF do usuário: ");
        	        			for(int j = 0; j < 10 ; j++) {
-       	        				if(user[j] != null && consult.equals(user[j].nome)) {
-                                    user[j].nome = Teclado.lerString("Digite o novo nome: ");
-                                    user[j].cpf = Teclado.lerString("Digite o novo CPF: ");
-                                    cont = 1;
-       	        				}
+       	        				if(user[j] != null && consult.equalsIgnoreCase(user[j].nome)) {
+                                    user[j] = null;
+					 			}
+								break;
        	        			}
        	        			if(cont == 0) {
        	        			    System.out.println("CPF não Encontrado");
@@ -52,19 +52,21 @@ public class Cadastro {
                     break;
         		case 3:
         			int opc3 = Teclado.lerInteiro("Consulta\n\n1-> Consultar pelo nome\n2-> Consultar pelo CPF\n\nDigite: ");
+					int cont2 = 0;
         	        switch(opc3) {
         	            case 1:
         	        	    consult = Teclado.lerString("Digite o nome: ");
         	        		for(int j = 0; j < 10 ; j++) {
         	        			if(consult.equals(user[j].nome)) {
-        	        				user[j].nome = Teclado.lerString(null);
-                                    user[j].cpf = Teclado.lerString(null);
+        	        				user[j] = null;	
         	        			}
+								break;
         	        		}
-        	        		if(cont == 0) {
+        	        		if(cont2 == 0) {
         	        			System.out.println("Nome não Encontrado");
+								break;	
         	        		}
-        	        		break;	
+        	        		
         	        	case 2:
         	        		consult = Teclado.lerString("Digite o CPF: ");
         	        		for(int j = 0; j < 10 ; j++) {
@@ -74,7 +76,7 @@ public class Cadastro {
         	        				break;
         	        			}
         	        		}
-        	        		if(cont == 0 ) {
+        	        		if(cont2 == 0 ) {
         	        			System.out.println("CPF não Encontrado");
         	        			break;
         	        		}
@@ -87,6 +89,8 @@ public class Cadastro {
                             consult = Teclado.lerString("Digite o nome do usuário: ");
                             for(int j = 0; j < 10; j++){
                                 if(user[j] != null && consult.equals(user[j].nome)){
+									System.out.print("\033[H\033[2J");
+                    				System.out.flush();
                                     System.out.println("Nome: "+user[j].nome+"\nCPF: "+user[j].cpf);
                                     cont = 1;
                                     
@@ -101,6 +105,8 @@ public class Cadastro {
                             consult = Teclado.lerString("Digite o CPF do usuário: ");
                             for(int j = 0 ; j < 10 ; j++){
                                 if(user[j] != null && consult.equals(user[j].cpf)){
+									System.out.print("\033[H\033[2J");
+                    				System.out.flush();
                                     System.out.println("Nome: "+user[j].nome+"\nCPF: "+user[j].cpf);
                                 }
                             }
